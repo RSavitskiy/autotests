@@ -25,9 +25,12 @@ public class TestNgTestBase {
 
   protected WebDriver driver;
 
+  
   @BeforeSuite
   public void initTestSuite() throws IOException {
     baseUrl = PropertyLoader.loadProperty("site.url");
+    
+    //Использование selenium grid
     gridHubUrl = PropertyLoader.loadProperty("grid.url");
     if ("".equals(gridHubUrl)) {
       gridHubUrl = null;
@@ -36,6 +39,7 @@ public class TestNgTestBase {
     WebDriverFactory.setMode(WebDriverFactoryMode.THREADLOCAL_SINGLETON);
   }
 
+//Инициализация драйвера
   @BeforeMethod
   public void initWebDriver() {
     driver = WebDriverFactory.getDriver(gridHubUrl, capabilities);
