@@ -82,6 +82,7 @@
       </plugin>
     </plugins>
   </build>
+
   <!-- profiles -->
   <profiles>
     <!-- browsers -->
@@ -130,11 +131,12 @@
         <capabilities>/htmlunit.capabilities</capabilities>
       </properties>
     </profile>
+
     <!-- environments -->
     <profile>
-      <id>localhost</id>
+      <id>minzab</id>
       <properties>
-        <site.url>http://localhost/</site.url>
+        <site.url>http://minimumzabot.ru/</site.url>
       </properties>
       <activation>
         <activeByDefault>true</activeByDefault>
@@ -158,6 +160,7 @@
         <site.url>http://prodhost.com/</site.url>
       </properties>
     </profile>
+
     <!-- grid -->
     <profile>
       <id>nogrid</id>
